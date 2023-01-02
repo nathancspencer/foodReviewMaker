@@ -54,6 +54,8 @@
 Your browser does not support the HTML5 canvas tag.
 </canvas>
 
+<a id="link"></a>
+
 <script>
 window.onload = function() {
     var fileTag = document.getElementById("filetag"),
@@ -86,6 +88,10 @@ window.onload = function() {
         var photo = document.getElementById("toEdit");
         ctx.drawImage(background, 0, 0);
         ctx.drawImage(toEdit, 256, 256);    
+        var link = document.getElementById('link');
+        link.setAttribute('download', 'highdistinction.png');
+        link.setAttribute('href', c.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+        link.click();  
     }
     })
 
@@ -97,7 +103,11 @@ window.onload = function() {
         var background = document.getElementById("dnImage");
         var photo = document.getElementById("toEdit");
         ctx.drawImage(background, 0, 0);
-        ctx.drawImage(toEdit, 256, 256);    
+        ctx.drawImage(toEdit, 256, 256);
+        var link = document.getElementById('link');
+        link.setAttribute('download', 'distinction.png');
+        link.setAttribute('href', c.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+        link.click();      
     }
     })
 
@@ -109,7 +119,11 @@ window.onload = function() {
         var background = document.getElementById("crImage");
         var photo = document.getElementById("toEdit");
         ctx.drawImage(background, 0, 0);
-        ctx.drawImage(toEdit, 256, 256);    
+        ctx.drawImage(toEdit, 256, 256);
+        var link = document.getElementById('link');
+        link.setAttribute('download', 'credit.png');
+        link.setAttribute('href', c.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+        link.click();        
     }
     })
 
@@ -121,7 +135,11 @@ window.onload = function() {
         var background = document.getElementById("psImage");
         var photo = document.getElementById("toEdit");
         ctx.drawImage(background, 0, 0);
-        ctx.drawImage(toEdit, 256, 256);    
+        ctx.drawImage(toEdit, 256, 256);
+        var link = document.getElementById('link');
+        link.setAttribute('download', 'pass.png');
+        link.setAttribute('href', c.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+        link.click();    
     }
     })
 
@@ -134,8 +152,14 @@ window.onload = function() {
         var photo = document.getElementById("toEdit");
         ctx.drawImage(background, 0, 0);
         ctx.drawImage(toEdit, 256, 256);    
+        var link = document.getElementById('link');
+        link.setAttribute('download', 'fail.png');
+        link.setAttribute('href', c.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+        link.click();
     }
     })
+
+
 }
 </script>
 
