@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="file" id="filetag">
+<img src="" id="toEdit" style="display: none;">
+
+<fieldset>
+    <legend>Choose your grade:</legend>
+
+    <div>
+        <input type="checkbox" id="hdCheckbox" name="High Distinction">
+        <label for="High Distinction">High Distinction</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="dnCheckbox" name="Distinction">
+        <label for="Distinction">Distinction</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="crCheckbox" name="Credit">
+        <label for="Credit">Credit</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="psCheckbox" name="Pass">
+        <label for="Pass">Pass</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="flCheckbox" name="Fail">
+        <label for="Fail">Fail</label>
+    </div>
+</fieldset>
+
+<img id="hdImage" width="3542" height="3542" src="backgrounds/hd.png" alt="High Distinction" style="display: none;">
+<img id="dnImage" width="3542" height="3542" src="backgrounds/dn.png" alt="Distinction" style="display: none;">
+<img id="crImage" width="3542" height="3542" src="backgrounds/cr.png" alt="Credit" style="display: none;">
+<img id="psImage" width="3542" height="3542" src="backgrounds/ps.png" alt="Pass" style="display: none;">
+<img id="flImage" width="3542" height="3542" src="backgrounds/fl.png" alt="Fail" style="display: none;">
+<!-- <img id="toEdit" width="3024" height="3024" src="toEdit/IMG_2923.png" alt="To Edit" style="display: none;"> -->
+
+<p>Canvas:</p>
+<canvas id="myCanvas" width="3542" height="3542" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+window.onload = function() {
+    var fileTag = document.getElementById("filetag"),
+    preview = document.getElementById("preview");
+    
+    fileTag.addEventListener("change", function() {
+        changeImage(this);
+    });
+
+    function changeImage(input) {
+        var reader;
+
+        if (input.files && input.files[0]) {
+            reader = new FileReader();
+
+            reader.onload = function(e) {
+                toEdit.setAttribute('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    const hdCheckbox = document.getElementById('hdCheckbox')
+    hdCheckbox.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var background = document.getElementById("hdImage");
+        var photo = document.getElementById("toEdit");
+        ctx.drawImage(background, 0, 0);
+        ctx.drawImage(toEdit, 256, 256);    
+    }
+    })
+
+    const dnCheckbox = document.getElementById('dnCheckbox')
+    dnCheckbox.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var background = document.getElementById("dnImage");
+        var photo = document.getElementById("toEdit");
+        ctx.drawImage(background, 0, 0);
+        ctx.drawImage(toEdit, 256, 256);    
+    }
+    })
+
+    const crCheckbox = document.getElementById('crCheckbox')
+    crCheckbox.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var background = document.getElementById("crImage");
+        var photo = document.getElementById("toEdit");
+        ctx.drawImage(background, 0, 0);
+        ctx.drawImage(toEdit, 256, 256);    
+    }
+    })
+
+    const psCheckbox = document.getElementById('psCheckbox')
+    psCheckbox.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var background = document.getElementById("psImage");
+        var photo = document.getElementById("toEdit");
+        ctx.drawImage(background, 0, 0);
+        ctx.drawImage(toEdit, 256, 256);    
+    }
+    })
+
+    const flCheckbox = document.getElementById('flCheckbox')
+    flCheckbox.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var background = document.getElementById("flImage");
+        var photo = document.getElementById("toEdit");
+        ctx.drawImage(background, 0, 0);
+        ctx.drawImage(toEdit, 256, 256);    
+    }
+    })
+}
+</script>
+
+</body>
+</html>
