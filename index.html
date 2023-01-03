@@ -78,11 +78,14 @@ window.onload = function() {
     hdCheckbox.addEventListener('change', (event) => {
     if (event.currentTarget.checked) {
         var c = document.getElementById("myCanvas");
+        var border = Math.round(document.getElementById("toEdit").width * 0.0813);
+        c.width = document.getElementById("toEdit").width + 2 * border;
+        c.height = document.getElementById("toEdit").height + 2 * border;
         var ctx = c.getContext("2d");
         var background = document.getElementById("hdImage");
         var photo = document.getElementById("toEdit");
         ctx.drawImage(background, 0, 0);
-        ctx.drawImage(toEdit, 256, 256);    
+        ctx.drawImage(toEdit, border, border);    
         var link = document.getElementById('link');
         link.setAttribute('download', 'highdistinction.png');
         link.setAttribute('href', c.toDataURL("image/png").replace("image/png", "image/octet-stream"));
@@ -94,11 +97,14 @@ window.onload = function() {
     dnCheckbox.addEventListener('change', (event) => {
     if (event.currentTarget.checked) {
         var c = document.getElementById("myCanvas");
+        var border = Math.round(document.getElementById("toEdit").width * 0.0813);
+        c.width = document.getElementById("toEdit").width + 2 * border;
+        c.height = document.getElementById("toEdit").height + 2 * border;
         var ctx = c.getContext("2d");
         var background = document.getElementById("dnImage");
         var photo = document.getElementById("toEdit");
         ctx.drawImage(background, 0, 0);
-        ctx.drawImage(toEdit, 256, 256);
+        ctx.drawImage(toEdit, border, border);
         var link = document.getElementById('link');
         link.setAttribute('download', 'distinction.png');
         link.setAttribute('href', c.toDataURL("image/png").replace("image/png", "image/octet-stream"));
@@ -110,11 +116,14 @@ window.onload = function() {
     crCheckbox.addEventListener('change', (event) => {
     if (event.currentTarget.checked) {
         var c = document.getElementById("myCanvas");
+        var border = Math.round(document.getElementById("toEdit").width * 0.0813);
+        c.width = document.getElementById("toEdit").width + 2 * border;
+        c.height = document.getElementById("toEdit").height + 2 * border;
         var ctx = c.getContext("2d");
         var background = document.getElementById("crImage");
         var photo = document.getElementById("toEdit");
         ctx.drawImage(background, 0, 0);
-        ctx.drawImage(toEdit, 256, 256);
+        ctx.drawImage(toEdit, border, border);
         var link = document.getElementById('link');
         link.setAttribute('download', 'credit.png');
         link.setAttribute('href', c.toDataURL("image/png").replace("image/png", "image/octet-stream"));
@@ -126,11 +135,14 @@ window.onload = function() {
     psCheckbox.addEventListener('change', (event) => {
     if (event.currentTarget.checked) {
         var c = document.getElementById("myCanvas");
+        var border = Math.round(document.getElementById("toEdit").width * 0.0813);
+        c.width = document.getElementById("toEdit").width + 2 * border;
+        c.height = document.getElementById("toEdit").height + 2 * border;
         var ctx = c.getContext("2d");
         var background = document.getElementById("psImage");
         var photo = document.getElementById("toEdit");
         ctx.drawImage(background, 0, 0);
-        ctx.drawImage(toEdit, 256, 256);
+        ctx.drawImage(toEdit, border, border);
         var link = document.getElementById('link');
         link.setAttribute('download', 'pass.png');
         link.setAttribute('href', c.toDataURL("image/png").replace("image/png", "image/octet-stream"));
@@ -142,11 +154,14 @@ window.onload = function() {
     flCheckbox.addEventListener('change', (event) => {
     if (event.currentTarget.checked) {
         var c = document.getElementById("myCanvas");
+        var border = Math.round(document.getElementById("toEdit").width * 0.0813);
+        c.width = document.getElementById("toEdit").width + 2 * border;
+        c.height = document.getElementById("toEdit").height + 2 * border;
         var ctx = c.getContext("2d");
         var background = document.getElementById("flImage");
         var photo = document.getElementById("toEdit");
         ctx.drawImage(background, 0, 0);
-        ctx.drawImage(toEdit, 256, 256);    
+        ctx.drawImage(toEdit, border, border);    
         var link = document.getElementById('link');
         link.setAttribute('download', 'fail.png');
         link.setAttribute('href', c.toDataURL("image/png").replace("image/png", "image/octet-stream"));
